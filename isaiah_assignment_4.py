@@ -84,3 +84,62 @@ print(f"Current GPA: {current_gpa}")
 print(f"Study Hours: {study_hours}")
 print(f"Social Points: {social_points}")
 print(f"Stress level: {stress_level}")
+
+study_options = ["Programming", "Math", "English", "History"]
+
+print("Choose which course to study: ", study_options)
+
+study_decision = input("Your decision: ")
+
+if study_decision not in study_options:
+    print("Invalid course.")
+else:
+    if (study_decision == "Programming"):
+        if (study_decision == "Programming") and current_gpa >= 3.5:
+            current_gpa += .2
+            social_points -= 3
+        elif (study_decision == "Programming") and current_gpa >= 3.0:
+            current_gpa += .15
+            social_points -= 6
+        elif (study_decision == "Programming") and current_gpa < 3.0:
+            current_gpa += .1
+            social_points -= 12
+    elif (study_decision == "Math"):
+        if (study_decision == "Math") and current_gpa >= 3.5:
+            current_gpa += .15
+            social_points -= 2
+        elif (study_decision == "Math") and current_gpa >= 3.0:
+            current_gpa += .12
+            social_points -= 5
+        elif (study_decision == "Math") and current_gpa < 3.0:
+            current_gpa += .05
+            social_points -= 10
+    elif (study_decision == "English"):
+        if (study_decision == "English") and current_gpa >= 3.5:
+            current_gpa += .13
+            social_points -= 2
+        elif (study_decision == "English") and current_gpa >= 3.0:
+            current_gpa += .1
+            social_points -= 5
+        elif (study_decision == "English") and current_gpa < 3.0:
+            current_gpa += .04
+            social_points -= 6
+    elif (study_decision == "History"):
+        if (study_decision == "History") and current_gpa >= 3.5:
+            current_gpa += .1
+            social_points -= 2
+        elif (study_decision == "History") and current_gpa >= 3.0:
+            current_gpa += .07
+            social_points -= 8
+        elif (study_decision == "History") and current_gpa < 3.0:
+            current_gpa += .02
+            social_points -= 10
+    else:
+        social_points -= 15
+        print("You need to get to work!")
+if (study_decision == "Programming" or study_decision == "Math"):
+    print(f"Current GPA: {current_gpa} and Social Points: {social_points}")
+    print("Technical approach! Boosts GPA but lowers social time.")
+elif (study_decision == "English" or study_decision == "History"):
+    print(f"Current GPA: {current_gpa} and Social Points: {social_points}")
+    print("Liberal arts approach! GPA boost but less social experience.")

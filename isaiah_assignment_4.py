@@ -6,12 +6,16 @@ stress_level = int(50)
 
 print(f"Welcome {student_name}!")
 print(f"Starting Stats → GPA: {current_gpa}, Study Hours: {study_hours}, Social Points: {social_points}, Stress Level: {stress_level}")
+print("")
 
 print("Choose course load:")
 print("1. Low Volume (12 credits)")
 print("2. Standard (15 credits)")
 print("3. High Volume (18 credits)")
+print("")
 
+print("--- Course Planning Decision ---")
+print("")
 choice = input("Your selection: ")
 
 if choice == "1": 
@@ -84,10 +88,14 @@ print(f"Current GPA: {current_gpa}")
 print(f"Study Hours: {study_hours}")
 print(f"Social Points: {social_points}")
 print(f"Stress level: {stress_level}")
+print("")
 
+print("--- Study Strategy Decision ---")
+print("")
 study_options = ["Programming", "Math", "English", "History"]
 
 print("Choose which course to study: ", study_options)
+print("")
 
 study_decision = input("Your decision: ")
 
@@ -143,3 +151,48 @@ if (study_decision == "Programming" or study_decision == "Math"):
 elif (study_decision == "English" or study_decision == "History"):
     print(f"Current GPA: {current_gpa} and Social Points: {social_points}")
     print("Liberal arts approach! GPA boost but less social experience.")
+print("")
+
+print("--- Final Semester Assessment ---")
+print("")
+
+print(f"Current GPA: {current_gpa}")
+print(f"Study Hours: {study_hours}")
+print(f"Social Points: {social_points}")
+print(f"Stress level: {stress_level}")
+print("")
+
+excelling_grade = current_gpa >= 3.5 
+passing_grade = current_gpa >= 2.0
+failing_grade = current_gpa < 2.0
+end_options = ["Study", "Work", "Party"] 
+if excelling_grade == True:
+    print("Mastered your courses!")
+    print(end_options)
+    end_choice = input("How will you spend your summer: ")
+    if end_choice is not end_options[0] or end_options[1]: 
+        print("Go crazy! You deserve it!")
+    elif end_choice is end_options[0]:
+        print("Look at you! Keeping ahead.")
+    elif end_choice is end_options[1]:
+        print("Working already!? I knew you could do it!")
+elif passing_grade == True:
+    print("Courses passed!")
+    print(end_options)
+    end_choice = input("What will you do this summer: ")
+    if end_choice is not end_options[0] or end_options[1]: 
+        print("Fair. You should enjoy your summer.")
+    elif end_choice is end_options[0]:
+        print("Responsible. I like it.")
+    elif end_choice is end_options[1]:
+        print("Money is always good.")
+elif failing_grade == True:
+    print("Courses...failed.")
+    print(end_options)
+    end_choice = input("You going to study this summer...? ")
+    if end_choice is not end_options[0] or end_options[1]: 
+        print("Oh...ok. Sure. It is summer...I guess...")
+    elif end_choice is end_options[0]:
+        print("That's what I like to hear! Never too late to improve!")
+    elif end_choice is end_options[1]:
+        print("You...aren't giving up are you? ")
